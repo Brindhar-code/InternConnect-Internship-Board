@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Discover internships in web development, Python, artificial intelligence, cybersecurity, and more."
+    >
+
+    <title>InternConnect | Find Your Next Opportunity</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#internship-list">
+        Skip to internship listings
+    </a>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="#" class="brand" aria-label="InternConnect home">
+                <span class="brand-icon" aria-hidden="true">IC</span>
+                <span>Intern<span class="brand-highlight">Connect</span></span>
+            </a>
+
+            <a href="#internship-list" class="nav-link">
+                Explore Internships
+            </a>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-content">
+
+                <span class="eyebrow">
+                    YOUR CAREER STARTS HERE
+                </span>
+
+                <h1>
+                    Find an internship.<br>
+                    <span>Build your future.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Explore opportunities, discover your interests,
+                    and take the next step in your career journey.
+                </p>
+
+                <a href="#internship-list" class="primary-button">
+                    Explore opportunities
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <div class="hero-stats" aria-label="Board features">
+                    <div>
+                        <strong>Explore</strong>
+                        <span>Career opportunities</span>
+                    </div>
+
+                    <div>
+                        <strong>Discover</strong>
+                        <span>Different domains</span>
+                    </div>
+
+                    <div>
+                        <strong>Grow</strong>
+                        <span>Your skills</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="listings-section" id="internship-list">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">OPPORTUNITIES FOR YOU</span>
+                        <h2>Explore internships</h2>
+                        <p>
+                            Find opportunities that match your skills
+                            and interests.
+                        </p>
+                    </div>
+
+                    <span class="listing-badge">
+                        Internship Board
+                    </span>
+                </div>
+
+                <form id="filter-form" class="filter-panel">
+
+                    <div class="form-group search-group">
+                        <label for="search-input">Search internships</label>
+
+                        <div class="search-box">
+                            <span aria-hidden="true">⌕</span>
+
+                            <input
+                                type="search"
+                                id="search-input"
+                                name="search"
+                                placeholder="Role, company, or skill..."
+                                autocomplete="off"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domain-filter">Domain</label>
+
+                        <select id="domain-filter" name="domain">
+                            <option value="all">All domains</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type-filter">Work mode</label>
+
+                        <select id="type-filter" name="type">
+                            <option value="all">All work modes</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="On-site">On-site</option>
+                        </select>
+                    </div>
+
+                    <button type="reset" class="reset-button">
+                        Reset filters
+                    </button>
+
+                </form>
+
+                <div class="results-toolbar">
+                    <p id="results-count" aria-live="polite">
+                        Loading internships...
+                    </p>
+
+                    <div class="sort-group">
+                        <label for="sort-filter">Sort by</label>
+
+                        <select id="sort-filter" name="sort">
+                            <option value="newest">Newest first</option>
+                            <option value="company">Company name</option>
+                            <option value="role">Role name</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div
+                    id="error-state"
+                    class="message-state error-state"
+                    role="alert"
+                    hidden
+                >
+                    <span class="state-icon" aria-hidden="true">!</span>
+                    <h3>We couldn't load internships</h3>
+                    <p>
+                        Please check your connection and try loading
+                        the listings again.
+                    </p>
+                    <button type="button" id="retry-button" class="primary-button">
+                        Try again
+                    </button>
+                </div>
+
+                <div
+                    id="empty-state"
+                    class="message-state"
+                    role="status"
+                    hidden
+                >
+                    <span class="state-icon" aria-hidden="true">⌕</span>
+                    <h3>No matching internships</h3>
+                    <p>
+                        Try another keyword or change your filters
+                        to discover more opportunities.
+                    </p>
+                    <button type="button" id="empty-reset-button" class="primary-button">
+                        Clear filters
+                    </button>
+                </div>
+
+                <div
+                    id="internship-grid"
+                    class="internship-grid"
+                    aria-label="Internship opportunities"
+                ></div>
+
+                <noscript>
+                    <p class="noscript-message">
+                        Please enable JavaScript to search and view
+                        internship listings.
+                    </p>
+                </noscript>
+
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container cta-content">
+                <div>
+                    <span class="eyebrow">YOUR NEXT CHAPTER</span>
+                    <h2>Every opportunity starts somewhere.</h2>
+                    <p>
+                        Keep learning, keep exploring, and keep building
+                        your future.
+                    </p>
+                </div>
+
+                <a href="#internship-list" class="secondary-button">
+                    Find your opportunity →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a href="#" class="brand footer-brand">
+                <span class="brand-icon" aria-hidden="true">IC</span>
+                <span>Intern<span class="brand-highlight">Connect</span></span>
+            </a>
+
+            <p>
+                Built with HTML, CSS and JavaScript.
+            </p>
+
+            <p>© 2026 InternConnect. Educational demo project.</p>
+        </div>
+    </footer>
+    <dialog id="details-dialog" class="details-dialog"
+    aria-labelledby="dialog-title">
+
+    <div class="dialog-content">
+
+        <button
+            type="button"
+            id="close-dialog"
+            class="dialog-close"
+            aria-label="Close internship details"
+        >
+            &times;
+        </button>
+
+        <p class="eyebrow">INTERNSHIP DETAILS</p>
+
+        <h2 id="dialog-title">Internship Details</h2>
+
+        <div id="dialog-body"></div>
+
+        <p class="demo-notice">
+            This is a demonstration listing, not a verified vacancy.
+        </p>
+
+    </div>
+
+</dialog>
+
+</body>
+</html>
